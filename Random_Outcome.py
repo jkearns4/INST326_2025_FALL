@@ -45,8 +45,8 @@ def random_outcome(action):
     # Roll a random outcome 
     roll = random.randint(1, 20)
 
-    # Step 4: Pick a result based on the roll
-    # (higher rolls = better outcomes)
+    # Pick a result based on the roll
+    # higher rolls = better outcomes
     if roll >= 17:
         result, severity, changes = outcomes[0]
     elif roll >= 12:

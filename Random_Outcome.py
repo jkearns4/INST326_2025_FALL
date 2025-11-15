@@ -1,3 +1,5 @@
+# Kenneth Kong
+# Random Outcomes function
 import random
 
 def random_outcome(action):

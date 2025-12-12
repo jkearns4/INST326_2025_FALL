@@ -131,7 +131,29 @@ class Player:
 
 
 
+# Action Outcome System
 
+def get_action_outcome(action, outcome_table):
+   
+   roll = random.randint(1, 20)
+   tiers = outcome_table[action]
+
+
+   if roll >= 17:
+       tier = tiers[0]
+   elif roll >= 12:
+       tier = tiers[1]
+   elif roll >= 6:
+       tier = tiers[2]
+   else:
+       tier = tiers[3]
+
+
+   return {
+       "result": tier[0],
+       "severity": tier[1],
+       "changes": tier[2]
+   }
 
 
 

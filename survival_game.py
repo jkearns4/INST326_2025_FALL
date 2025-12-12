@@ -2,6 +2,8 @@ import json
 import random
 
 # Load the Game Data from JSON
+   
+def load_config(path):
    """
    Primary author: Kenneth Kong
    Techniques claimed: with statement, json.load()
@@ -14,7 +16,6 @@ import random
        dict: Parsed configuration dictionary containing starting stats,
              decay values, action outcomes, events, and max_days.
    """
-def load_config(path):
    with open(path, "r", encoding="utf-8") as f:
        return json.load(f)
 

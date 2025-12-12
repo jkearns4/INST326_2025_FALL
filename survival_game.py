@@ -75,29 +75,7 @@ class Player:
          self.health = 0
 
 
-   def apply_decay(self, decay):
-      """
-      Primary author: Josh Harris
-      Apply daily decay to hunger and thirst and penalize health if either reaches zero.
-      Parameters:
-         decay (dict): Mapping from stat name (str) to an integer amount that is subtracted each day.
    
-   
-      Returns:
-         None
-      """
-      for stat, amount in decay.items():
-         value = getattr(self, stat) - amount
-         if value <= 0:
-            setattr(self, stat, 0)
-            self.health -= 10
-         else:
-            setattr(self, stat, value)
-   
-   
-      if self.health < 0:
-            self.health = 0
-
    def is_alive(self):
       """
       Primary author: Josh Harris

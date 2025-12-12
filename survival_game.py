@@ -326,7 +326,30 @@ class Game:
 
 
    
-   
+   def run(self):
+      """
+      Primary author: Jason Kearns
+
+
+      Run the full game loop from day 1 until the player either dies
+      or survives the maximum number of days.
+
+
+      Returns:
+         None
+      """
+      print("\nWelcome to SURVIVAL.")
+      print("Try to live through all days in a zombie-infested city.\n")
+
+
+      while self.day <= self.max_days:
+         alive = self.run_day()
+         if not alive:
+            return
+            
+         self.day += 1
+
+      print("\nYou survived all days. You win!")
 
 
 # Main entry point

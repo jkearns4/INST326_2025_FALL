@@ -8,15 +8,11 @@ import random
 def load_config(path):
    """
    Primary author: Kenneth Kong
-   Techniques claimed: with statement, json.load()
-
 
    Load game configuration data from a JSON file.
 
-
    Parameters:
        path (str): Path to the JSON configuration file.
-
 
    Returns:
        dict: Parsed configuration dictionary containing starting stats,

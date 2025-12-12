@@ -25,8 +25,40 @@ This file holds all the game data, including:
 
 The game loads everything from this file so nothing is hardcoded.
 
-### **README.md**
+### **How to Play the Game**
 The file you’re reading now. It explains how to run and play the game and who contributed to which parts.
+
+Each in-game day works like this:
+1. Your stats are displayed
+
+2. You choose an action (hunt, rest, search_food, build_shelter)
+
+3. The game rolls for a random outcome
+
+4. Stat changes are applied
+
+5. A random event may occur
+
+6. Daily decay happens
+
+Win Condition
+
+Survive all 20 days.
+
+Lose Condition
+
+Your health reaches 0 at any point in the game.
+---
+Attributions
+
+| Method/function      | Primary author | Techniques demonstrated            |
+| -------------------- | -------------- | ---------------------------------- |
+| load_config          | Kenneth Kong   | with statement, json.load()        |
+| get_action_outcome   | Kenneth Kong   | custom outcome-selection algorithm |
+| Player.apply_changes | Josh Harris    | stat update logic                  |
+| Player.**str**       | Josh Harris    | f-strings, **str** magic method    |
+| Game.**init**        | Jason Kearns   | composition of custom classes      |
+| Game.choose_action   | Jason Kearns   | list comprehension                 |
 
 ---
 

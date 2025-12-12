@@ -24,7 +24,88 @@ def load_config(path):
 
 
 
+# Action Outcome System
 
+def get_action_outcome(action, outcome_table):
+   """
+   Primary author: Kenneth Kong
+
+
+   Roll a 1–20 value and choose an outcome tier for the given action.
+
+
+   Parameters:
+       action (str): The action name (key in outcome_table).
+       outcome_table (dict): Mapping from action names to a list of outcome
+                             tiers. Each tier is a list or tuple in the form
+                             [result_label, severity, stat_changes_dict].
+
+
+   Returns:
+       dict: Dictionary with keys:
+             - "result" (str): label of the outcome.
+             - "severity" (int): relative impact of the outcome.
+             - "changes" (dict): stat changes for the outcome.
+   """
+   roll = random.randint(1, 20)
+   tiers = outcome_table[action]
+
+
+   if roll >= 17:
+       tier = tiers[0]
+   elif roll >= 12:
+       tier = tiers[1]
+   elif roll >= 6:
+       tier = tiers[2]
+   else:
+       tier = tiers[3]
+
+
+   return {
+       "result": tier[0],
+       "severity": tier[1],
+       "changes": tier[2]
+   }
+
+
+
+
+
+
+# Random Event Algorithm
+
+def trigger_random_event(events, player):
+   """
+   Primary author: Kenneth Kong
+
+
+   Possibly trigger a random event for the current day. Each event stores
+   a base chance, which is reduced by the player's shelter level.
+
+
+   Parameters:
+       events (list[dict]): List of event dictionaries. Each event should
+                            define "name", "description", "base_chance",
+                            and "effects" (stat changes).
+       player (Player): The active Player object.
+
+
+   Returns:
+       dict | None: The event dictionary that occurred, or None if no
+                    event was triggered.
+   """
+   for event in events:
+       chance = event["base_chance"]
+       adjusted = max(0, chance - (player.shelter * 0.03))
+       roll = random.random()
+
+
+       if roll < adjusted:
+           player.apply_changes(event["effects"])
+           return event
+
+
+   return None
 
 class Game:
    """

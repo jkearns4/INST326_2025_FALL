@@ -10,3 +10,6 @@
    "hunger": 10,
    "thirst": 12
  },
+
+ "max_days": 20,
+ "action_outcomes": {

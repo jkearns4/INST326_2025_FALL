@@ -51,29 +51,7 @@ class Player:
       self.thirst = thirst
       self.shelter = shelter
 
-   def apply_changes(self, changes):
-      """
-      Primary author: Josh Harris
    
-   
-      Apply stat changes from an action or an event.
-   
-   
-      Parameters:
-         changes (dict): Mapping from stat name (str) to an integer change_amount.
-   
-   
-      Returns:
-         None
-      """
-      for stat, change_amount in changes.items():
-         if hasattr(self, stat):
-            value = getattr(self, stat) + change_amount
-            setattr(self, stat, max(value, 0))
-   
-      if self.health <= 0:
-         self.health = 0
-
    def apply_decay(self, decay):
       """
       Primary author: Josh Harris

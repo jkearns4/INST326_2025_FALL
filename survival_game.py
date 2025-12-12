@@ -99,7 +99,19 @@ class Player:
             self.health = 0
 
 
+   def is_alive(self):
+      """
+      Primary author: Josh Harris
    
+   
+      Check if the player is still alive.
+   
+   
+      Returns:
+         bool: True if health is greater than zero, False otherwise.
+      """
+      return self.health > 0
+
 
    def __str__(self):
       """

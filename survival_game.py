@@ -134,7 +134,26 @@ class Player:
 # Action Outcome System
 
 def get_action_outcome(action, outcome_table):
-   
+   """
+   Primary author: Kenneth Kong
+
+
+   Roll a 1–20 value and choose an outcome tier for the given action.
+
+
+   Parameters:
+       action (str): The action name (key in outcome_table).
+       outcome_table (dict): Mapping from action names to a list of outcome
+                             tiers. Each tier is a list or tuple in the form
+                             [result_label, severity, stat_changes_dict].
+
+
+   Returns:
+       dict: Dictionary with keys:
+             - "result" (str): label of the outcome.
+             - "severity" (int): relative impact of the outcome.
+             - "changes" (dict): stat changes for the outcome.
+   """
    roll = random.randint(1, 20)
    tiers = outcome_table[action]
 

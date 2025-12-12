@@ -270,60 +270,7 @@ class Game:
            print("Invalid action. Try again.")
 
 
-   def run_day(self):
-       """
-       Primary author: Kenneth Kong
-
-
-       Run the full logic for a single in-game day:
-       - Show current stats
-       - Prompt for an action
-       - Apply the action outcome
-       - Apply daily decay
-       - Possibly trigger a random event
-       - Check for player death
-
-
-       Returns:
-           bool: True if the player survives the day, False if the player dies.
-       """
-       print(f"\n--- Day {self.day} ---")
-       print(self.player)
-
-
-       action = self.choose_action()
-       outcome = get_action_outcome(action, self.actions)
-
-
-       print(f"\nOutcome: {outcome['result'].replace('_', ' ').title()}")
-       print("Stat changes from action:", outcome["changes"])
-
-
-       # Copy the changes so we can adjust them for hunger/food handling
-       changes = dict(outcome["changes"])
-       if "food" in changes:
-           food_val = changes.pop("food")
-           changes["hunger"] = changes.get("hunger", 0) - food_val
-
-
-       self.player.apply_changes(changes)
-       self.player.apply_decay(self.decay)
-
-
-       event = trigger_random_event(self.events, self.player)
-       if event:
-           print(f"\nEVENT: {event['name']}")
-           print(event["description"])
-           print("Event effects:", event["effects"])
-
-
-       if not self.player.is_alive():
-           print("\nYou died. Game over.")
-           return False
-
-
-       return True
-
+   
 
    
    def run(self):

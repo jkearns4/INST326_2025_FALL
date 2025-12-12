@@ -64,6 +64,8 @@ Attributions
 This project was developed using course material and our own design ideas. 
 We did not use any external code or tutorials while building the program.
 Thematic inspiration from classic survival-style games such as Oregon Trail, Ark, etc. But all mechanics, algorithms, and the JSON structure were created entirely by our group.
+
+G2A. (2022, July 15). 8 Games Like The Oregon Trail. G2A News. Retrieved December 12, 2025, from
 https://www.g2a.com/news/features/games-like-oregon-trail/ 
 
 ## How to Run the Game

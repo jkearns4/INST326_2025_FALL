@@ -270,7 +270,7 @@ class Game:
            print("Invalid action. Try again.")
 
 
-def run_day(self):
+   def run_day(self):
        """
        Primary author: Kenneth Kong
 
@@ -346,10 +346,8 @@ def run_day(self):
          alive = self.run_day()
          if not alive:
             return
-
-
+            
          self.day += 1
-
 
       print("\nYou survived all days. You win!")
 

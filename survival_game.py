@@ -30,109 +30,109 @@ class Player:
 
 
    def __init__(self, health, energy, hunger, thirst, shelter):
-       """
-       Primary author: Josh Harris
-        Initialize a new Player object.
+          """
+          Primary author: Josh Harris
+           Initialize a new Player object.
+   
+   
+          Parameters:
+              health (int): Starting health value.
+              energy (int): Starting energy value.
+              hunger (int): Starting hunger value.
+              thirst (int): Starting thirst value.
+              shelter (int): Starting shelter level.
+          """
+   
+   
+          self.health = health
+          self.energy = energy
+          self.hunger = hunger
+          self.thirst = thirst
+          self.shelter = shelter
+
+    def apply_changes(self, changes):
+          """
+          Primary author: Josh Harris
+   
+   
+          Apply stat changes from an action or an event.
+   
+   
+          Parameters:
+              changes (dict): Mapping from stat name (str) to an integer change_amount.
+   
+   
+          Returns:
+              None
+          """
+          for stat, change_amount in changes.items():
+              if hasattr(self, stat):
+                  value = getattr(self, stat) + change_amount
+                  setattr(self, stat, max(value, 0))
+   
+   
+          if self.health <= 0:
+              self.health = 0
+
+   def apply_decay(self, decay):
+          """
+          Primary author: Josh Harris
+   
+   
+          Apply daily decay to hunger and thirst and penalize health if either
+          reaches zero.
+   
+   
+          Parameters:
+              decay (dict): Mapping from stat name (str) to an integer amount
+                            that is subtracted each day.
+   
+   
+          Returns:
+              None
+          """
+          for stat, amount in decay.items():
+              value = getattr(self, stat) - amount
+              if value <= 0:
+                  setattr(self, stat, 0)
+                  self.health -= 10
+              else:
+                  setattr(self, stat, value)
+   
+   
+          if self.health < 0:
+              self.health = 0
+
+   def is_alive(self):
+          """
+          Primary author: Josh Harris
+   
+   
+          Check if the player is still alive.
+   
+   
+          Returns:
+              bool: True if health is greater than zero, False otherwise.
+          """
+          return self.health > 0
 
 
-       Parameters:
-           health (int): Starting health value.
-           energy (int): Starting energy value.
-           hunger (int): Starting hunger value.
-           thirst (int): Starting thirst value.
-           shelter (int): Starting shelter level.
-       """
-
-
-       self.health = health
-       self.energy = energy
-       self.hunger = hunger
-       self.thirst = thirst
-       self.shelter = shelter
-
- def apply_changes(self, changes):
-       """
-       Primary author: Josh Harris
-
-
-       Apply stat changes from an action or an event.
-
-
-       Parameters:
-           changes (dict): Mapping from stat name (str) to an integer change_amount.
-
-
-       Returns:
-           None
-       """
-       for stat, change_amount in changes.items():
-           if hasattr(self, stat):
-               value = getattr(self, stat) + change_amount
-               setattr(self, stat, max(value, 0))
-
-
-       if self.health <= 0:
-           self.health = 0
-
-def apply_decay(self, decay):
-       """
-       Primary author: Josh Harris
-
-
-       Apply daily decay to hunger and thirst and penalize health if either
-       reaches zero.
-
-
-       Parameters:
-           decay (dict): Mapping from stat name (str) to an integer amount
-                         that is subtracted each day.
-
-
-       Returns:
-           None
-       """
-       for stat, amount in decay.items():
-           value = getattr(self, stat) - amount
-           if value <= 0:
-               setattr(self, stat, 0)
-               self.health -= 10
-           else:
-               setattr(self, stat, value)
-
-
-       if self.health < 0:
-           self.health = 0
-
- def is_alive(self):
-       """
-       Primary author: Josh Harris
-
-
-       Check if the player is still alive.
-
-
-       Returns:
-           bool: True if health is greater than zero, False otherwise.
-       """
-       return self.health > 0
-
-
-def __str__(self):
-       """
-       Primary author: Josh Harris
-
-
-       Create a readable string representation of the player's current stats.
-
-
-       Returns:
-           str: Formatted string with health, energy, hunger, thirst,
-                and shelter values.
-       """
-       return (
-           f"Health: {self.health} | Energy: {self.energy} | "
-           f"Hunger: {self.hunger} | Thirst: {self.thirst} | "
-           f"Shelter: {self.shelter}"
+   def __str__(self):
+          """
+          Primary author: Josh Harris
+   
+   
+          Create a readable string representation of the player's current stats.
+   
+   
+          Returns:
+              str: Formatted string with health, energy, hunger, thirst,
+                   and shelter values.
+          """
+          return (
+              f"Health: {self.health} | Energy: {self.energy} | "
+              f"Hunger: {self.hunger} | Thirst: {self.thirst} | "
+              f"Shelter: {self.shelter}"
 
 
 

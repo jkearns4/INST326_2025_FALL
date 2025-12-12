@@ -6,3 +6,7 @@
    "thirst": 50,
    "shelter": 0
  },
+ "daily_decay": {
+   "hunger": 10,
+   "thirst": 12
+ },

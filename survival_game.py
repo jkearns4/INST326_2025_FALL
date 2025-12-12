@@ -113,22 +113,7 @@ class Player:
       return self.health > 0
 
 
-   def __str__(self):
-      """
-      Primary author: Josh Harris
-      Techniques claimed: f-strings with expressions, magic method __str__()
-      Create a readable string representation of the player's current stats.
    
-   
-      Returns:
-         str: Formatted string with health, energy, hunger, thirst, and shelter values.
-      """
-      return (
-         f"Health: {self.health} | Energy: {self.energy} | "
-         f"Hunger: {self.hunger} | Thirst: {self.thirst} | "
-         f"Shelter: {self.shelter}"
-      )
-
 
 
 # Action Outcome System

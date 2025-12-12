@@ -248,7 +248,26 @@ class Game:
        self.day = 1
 
 
-   
+   def choose_action(self):
+       """
+       Primary author: Jason Kearns
+       Techniques claimed: list comprehension
+       Prompt the user to choose an action for the day and validate input.
+
+
+       Returns:
+           str: The action name chosen by the user.
+       """
+       # list comprehension to build the list of valid actions
+       valid = [action_name for action_name in self.actions.keys()]
+       print("\nActions:", ", ".join(valid))
+
+
+       while True:
+           choice = input("Choose an action: ").strip().lower()
+           if choice in valid:
+               return choice
+           print("Invalid action. Try again.")
 
 
    def run_day(self):

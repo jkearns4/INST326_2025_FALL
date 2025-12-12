@@ -8,7 +8,7 @@ import random
 def load_config(path):
    """
    Primary author: Kenneth Kong
-
+   Techniques claimed: with statement, json.load()
    Load game configuration data from a JSON file.
 
    Parameters:
@@ -115,8 +115,7 @@ class Player:
    def __str__(self):
       """
       Primary author: Josh Harris
-   
-   
+      Techniques claimed: f-strings with expressions, magic method __str__()
       Create a readable string representation of the player's current stats.
    
    
@@ -223,7 +222,7 @@ class Game:
    def __init__(self, config):
        """
        Primary author: Jason Kearns
-
+       Techniques claimed: composition of classes (Game has a Player)
        Initialize the game using configuration data.
 
        Parameters:
@@ -251,7 +250,7 @@ class Game:
    def choose_action(self):
        """
        Primary author: Jason Kearns
-
+       Techniques claimed: list comprehension
        Prompt the user to choose an action for the day and validate input.
 
 

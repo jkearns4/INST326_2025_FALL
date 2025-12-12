@@ -32,25 +32,25 @@ class Player:
 
 
    def __init__(self, health, energy, hunger, thirst, shelter):
-         """
-         Primary author: Josh Harris
-         Initialize a new Player object.
+      """
+      Primary author: Josh Harris
+      Initialize a new Player object.
    
    
-         Parameters:
-            health (int): Starting health value.
-            energy (int): Starting energy value.
-            hunger (int): Starting hunger value.
-            thirst (int): Starting thirst value.
-            shelter (int): Starting shelter level.
-         """
+      Parameters:
+         health (int): Starting health value.
+         energy (int): Starting energy value.
+         hunger (int): Starting hunger value.
+         thirst (int): Starting thirst value.
+         shelter (int): Starting shelter level.
+      """
    
    
-          self.health = health
-          self.energy = energy
-          self.hunger = hunger
-          self.thirst = thirst
-          self.shelter = shelter
+      self.health = health
+      self.energy = energy
+      self.hunger = hunger
+      self.thirst = thirst
+      self.shelter = shelter
 
    def apply_changes(self, changes):
       """

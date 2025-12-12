@@ -271,7 +271,22 @@ class Game:
 
 
    def run_day(self):
-       
+       """
+       Primary author: Kenneth Kong
+
+
+       Run the full logic for a single in-game day:
+       - Show current stats
+       - Prompt for an action
+       - Apply the action outcome
+       - Apply daily decay
+       - Possibly trigger a random event
+       - Check for player death
+
+
+       Returns:
+           bool: True if the player survives the day, False if the player dies.
+       """
        print(f"\n--- Day {self.day} ---")
        print(self.player)
 

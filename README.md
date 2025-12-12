@@ -59,6 +59,12 @@ Attributions
 
 ---
 
+## Sources
+
+This project was developed using course material and our own design ideas. 
+We did not use any external code or tutorials while building the program.
+Thematic inspiration from classic survival-style games such as Oregon Trail, Ark, etc. But all mechanics, algorithms, and the JSON structure were created entirely by our group.
+
 ## How to Run the Game
 
 These steps assume macOS, but other systems use the same idea.

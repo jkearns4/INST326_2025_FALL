@@ -20,7 +20,36 @@ def load_config(path):
    with open(path, "r", encoding="utf-8") as f:
        return json.load(f)
 
+# Player Class
 
+class Player:
+   """
+   Primary author: Josh Harris
+
+   Represents the player character and survival-related stats.
+   """
+
+
+   def __init__(self, health, energy, hunger, thirst, shelter):
+      """
+      Primary author: Josh Harris
+      Initialize a new Player object.
+   
+   
+      Parameters:
+         health (int): Starting health value.
+         energy (int): Starting energy value.
+         hunger (int): Starting hunger value.
+         thirst (int): Starting thirst value.
+         shelter (int): Starting shelter level.
+      """
+   
+   
+      self.health = health
+      self.energy = energy
+      self.hunger = hunger
+      self.thirst = thirst
+      self.shelter = shelter
 
    def apply_changes(self, changes):
       """

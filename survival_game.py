@@ -50,6 +50,29 @@ class Player:
        self.thirst = thirst
        self.shelter = shelter
 
+ def apply_changes(self, changes):
+       """
+       Primary author: Josh Harris
+
+
+       Apply stat changes from an action or an event.
+
+
+       Parameters:
+           changes (dict): Mapping from stat name (str) to an integer delta.
+
+
+       Returns:
+           None
+       """
+       for stat, delta in changes.items():
+           if hasattr(self, stat):
+               value = getattr(self, stat) + delta
+               setattr(self, stat, max(value, 0))
+
+
+       if self.health <= 0:
+           self.health = 0
 
 
 

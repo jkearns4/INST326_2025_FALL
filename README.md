@@ -64,6 +64,7 @@ Attributions
 This project was developed using course material and our own design ideas. 
 We did not use any external code or tutorials while building the program.
 Thematic inspiration from classic survival-style games such as Oregon Trail, Ark, etc. But all mechanics, algorithms, and the JSON structure were created entirely by our group.
+https://www.g2a.com/news/features/games-like-oregon-trail/ 
 
 ## How to Run the Game
 

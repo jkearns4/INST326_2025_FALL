@@ -39,11 +39,7 @@ class Game:
        """
        Primary author: Jason Kearns
 
-
-
-
        Initialize the game using configuration data.
-
 
        Parameters:
            config (dict): Configuration dictionary loaded from JSON. It should
@@ -70,9 +66,6 @@ class Game:
    def choose_action(self):
        """
        Primary author: Jason Kearns
-
-
-
 
        Prompt the user to choose an action for the day and validate input.
 

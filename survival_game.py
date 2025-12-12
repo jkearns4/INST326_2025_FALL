@@ -4,7 +4,6 @@ import random
 
 # Load all game data from JSON
 
-
 def load_config(path):
    """
    Primary author: Kenneth Kong
@@ -75,6 +74,7 @@ class Player:
       if self.health <= 0:
          self.health = 0
 
+
    def apply_decay(self, decay):
       """
       Primary author: Josh Harris
@@ -97,6 +97,7 @@ class Player:
    
       if self.health < 0:
             self.health = 0
+
 
    def is_alive(self):
       """

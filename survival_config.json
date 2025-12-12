@@ -1,3 +1,4 @@
+{
  "starting_stats": {
    "health": 100,
    "energy": 100,
@@ -17,3 +18,22 @@
      ["fail", 2, {"food": 0, "energy": -2, "health": 0}],
      ["injury", 1, {"food": 0, "energy": -2, "health": -3}]
    ],
+   "search_food": [
+     ["success", 4, {"food": 1, "energy": -1, "health": 0}],
+     ["small_success", 3, {"food": 1, "energy": -1, "health": 0}],
+     ["fail", 2, {"food": 0, "energy": -1, "health": 0}],
+     ["spoiled_food", 1, {"food": 1, "energy": -1, "health": -2}]
+   ],
+   "rest": [
+     ["good_rest", 4, {"energy": 2, "hunger": 1, "thirst": 1}],
+     ["neutral_rest", 3, {"energy": 1, "hunger": 1, "thirst": 1}],
+     ["poor_rest", 2, {"energy": 0, "hunger": 1, "thirst": 1}],
+     ["nightmare", 1, {"energy": -1, "hunger": 1, "thirst": 1}]
+   ],
+   "build_shelter": [
+     ["major_upgrade", 5, {"shelter": 2, "energy": -4}],
+     ["upgrade", 3, {"shelter": 1, "energy": -3}],
+     ["fail", 2, {"shelter": 0, "energy": -2}],
+     ["injury", 1, {"shelter": 0, "energy": -2, "health": -2}]
+   ]
+ },

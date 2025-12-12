@@ -176,6 +176,22 @@ def get_action_outcome(action, outcome_table):
 
 
 
+# Random Event Algorithm
+
+def trigger_random_event(events, player):
+   
+   for event in events:
+       chance = event["base_chance"]
+       adjusted = max(0, chance - (player.shelter * 0.03))
+       roll = random.random()
+
+
+       if roll < adjusted:
+           player.apply_changes(event["effects"])
+           return event
+
+
+   return None
 
 class Game:
    """

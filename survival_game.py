@@ -127,6 +127,7 @@ class Player:
          f"Health: {self.health} | Energy: {self.energy} | "
          f"Hunger: {self.hunger} | Thirst: {self.thirst} | "
          f"Shelter: {self.shelter}"
+      )
 
 
 

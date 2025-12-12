@@ -211,29 +211,44 @@ def trigger_random_event(events, player):
 
    return None
 
+class Game:
+   """
+   Primary author: Jason Kearns
 
 
+   Manages the overall game state and main game loop.
+   """
 
-   def choose_action(self):
+
+   def __init__(self, config):
        """
        Primary author: Jason Kearns
-       Techniques claimed: list comprehension
-       Prompt the user to choose an action for the day and validate input.
+       Techniques claimed: composition of classes (Game has a Player)
+       Initialize the game using configuration data.
 
-
-       Returns:
-           str: The action name chosen by the user.
+       Parameters:
+           config (dict): Configuration dictionary loaded from JSON. It should
+                          contain keys "starting_stats", "daily_decay",
+                          "action_outcomes", "events", and "max_days".
        """
-       # list comprehension to build the list of valid actions
-       valid = [action_name for action_name in self.actions.keys()]
-       print("\nActions:", ", ".join(valid))
+       stats = config["starting_stats"]
+       self.player = Player(
+           stats["health"],
+           stats["energy"],
+           stats["hunger"],
+           stats["thirst"],
+           stats["shelter"]
+       )
 
 
-       while True:
-           choice = input("Choose an action: ").strip().lower()
-           if choice in valid:
-               return choice
-           print("Invalid action. Try again.")
+       self.decay = config["daily_decay"]
+       self.actions = config["action_outcomes"]
+       self.events = config["events"]
+       self.max_days = config["max_days"]
+       self.day = 1
+
+
+   
 
 
    def run_day(self):

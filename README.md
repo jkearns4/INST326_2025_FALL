@@ -41,13 +41,9 @@ Each in-game day works like this:
 
 6. Daily decay happens
 
-Win Condition
+Win Condition: Survive all 20 days.
 
-Survive all 20 days.
-
-Lose Condition
-
-Your health reaches 0 at any point in the game.
+Lose Condition: Your health reaches 0 at any point.
 ---
 Attributions
 

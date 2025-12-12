@@ -88,11 +88,11 @@ class Player:
       """
       for stat, amount in decay.items():
          value = getattr(self, stat) - amount
-            if value <= 0:
-               setattr(self, stat, 0)
-               self.health -= 10
-            else:
-               setattr(self, stat, value)
+         if value <= 0:
+            setattr(self, stat, 0)
+            self.health -= 10
+         else:
+            setattr(self, stat, value)
    
    
       if self.health < 0:

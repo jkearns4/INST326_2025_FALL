@@ -59,15 +59,15 @@ class Player:
 
 
        Parameters:
-           changes (dict): Mapping from stat name (str) to an integer delta.
+           changes (dict): Mapping from stat name (str) to an integer change_amount.
 
 
        Returns:
            None
        """
-       for stat, delta in changes.items():
+       for stat, change_amount in changes.items():
            if hasattr(self, stat):
-               value = getattr(self, stat) + delta
+               value = getattr(self, stat) + change_amount
                setattr(self, stat, max(value, 0))
 
 

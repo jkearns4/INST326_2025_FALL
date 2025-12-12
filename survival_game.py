@@ -24,6 +24,7 @@ def load_config(path):
 
 
 
+
 # Action Outcome System
 
 def get_action_outcome(action, outcome_table):
@@ -66,9 +67,6 @@ def get_action_outcome(action, outcome_table):
        "severity": tier[1],
        "changes": tier[2]
    }
-
-
-
 
 
 

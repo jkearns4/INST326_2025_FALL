@@ -1,11 +1,5 @@
 {
-  "starting_stats": {
-    "health": 100,
-    "energy": 100,
-    "hunger": 50,
-    "thirst": 50,
-    "shelter": 0
-  },
+  
   "daily_decay": {
     "hunger": 10,
     "thirst": 12

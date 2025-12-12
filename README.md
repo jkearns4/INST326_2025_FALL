@@ -44,8 +44,9 @@ Each in-game day works like this:
 Win Condition: Survive all 20 days.
 
 Lose Condition: Your health reaches 0 at any point.
----
+
 Attributions
+---
 
 | Method/function      | Primary author | Techniques demonstrated            |
 | -------------------- | -------------- | ---------------------------------- |

@@ -176,40 +176,6 @@ def get_action_outcome(action, outcome_table):
 
 
 
-# Random Event Algorithm
-
-def trigger_random_event(events, player):
-   """
-   Primary author: Kenneth Kong
-
-
-   Possibly trigger a random event for the current day. Each event stores
-   a base chance, which is reduced by the player's shelter level.
-
-
-   Parameters:
-       events (list[dict]): List of event dictionaries. Each event should
-                            define "name", "description", "base_chance",
-                            and "effects" (stat changes).
-       player (Player): The active Player object.
-
-
-   Returns:
-       dict | None: The event dictionary that occurred, or None if no
-                    event was triggered.
-   """
-   for event in events:
-       chance = event["base_chance"]
-       adjusted = max(0, chance - (player.shelter * 0.03))
-       roll = random.random()
-
-
-       if roll < adjusted:
-           player.apply_changes(event["effects"])
-           return event
-
-
-   return None
 
 class Game:
    """

@@ -352,7 +352,13 @@ class Game:
       print("\nYou survived all days. You win!")
 
 
+# Main entry point
 
+if __name__ == "__main__":
+   # Primary author: Kenneth Kong
+   config = load_config("survival_config.json")
+   game = Game(config)
+   game.run()
 
 
 

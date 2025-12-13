@@ -53,8 +53,8 @@ Attributions
 | load_config          | Kenneth Kong   | with statement, json.load()        |
 | get_action_outcome   | Kenneth Kong   | custom outcome-selection algorithm |
 | Player.apply_changes | Josh Harris    | stat update logic                  |
-| Player.**str**       | Josh Harris    | f-strings, **str** magic method    |
-| Game.**init**        | Jason Kearns   | composition of custom classes      |
+| Player.str       | Josh Harris    | f-strings, str magic method    |
+| Game.init        | Jason Kearns   | composition of custom classes      |
 | Game.choose_action   | Jason Kearns   | list comprehension                 |
 
 ---

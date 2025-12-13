@@ -63,7 +63,7 @@ Attributions
 
 This project was developed using course material and our own design ideas. 
 We did not use any external code or tutorials while building the program.
-Inspiration from classic and modern survival-style games, such as Oregon Trail. But all mechanics, algorithms, and the JSON structure were created entirely by our group.
+Inspiration from the classic survival-style game, The Oregon Trail. But all mechanics, algorithms, and the JSON structure were created entirely by our group.
 
 Oregon Trail WS. (n.d.). The Oregon Trail.
 https://oregontrail.ws/games/the-oregon-trail/ 
